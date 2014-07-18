@@ -1,0 +1,18 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Instrument" table="Instruments">
+		<id name="id" type="integer" column="InstrumentID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="instrumentName" column="InstrumentName" type="string" />
+		
+		<one-to-one target-entity="Instrument" field="parentInstrument">
+			<join-column name="ParentInstrumentID" referenced-column-name="InstrumentID" />
+		</one-to-one>
+	</entity>
+	
+</doctrine-mapping>

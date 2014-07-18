@@ -1,0 +1,45 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping-2.0.xsd">
+	
+	<entity name="org\cim\User" table="Users">
+		<id name="id" type="integer" column="UserID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="firstName" column="FirstName" type="string" />
+		<field name="lastName" column="LastName" type="string" />
+		<field name="password" column="Password" type="string" />
+		<field name="institution" column="Institution" type="string" />
+		<field name="bio" column="Bio" type="text" />
+		<field name="email" column="Email" type="string" />
+		<field name="createdDate" column="CreatedDate" type="datetime" />
+		<field name="lastLoginDate" column="LastLoginDate" type="datetime" />
+		
+		<many-to-many target-entity="Instrument" field="instruments">
+			<join-table name="Instruments_Users">
+				<join-columns>
+					<join-column name="UserID" referenced-column-name="UserID" />
+				</join-columns>
+				<inverse-join-columns>
+					<join-column name="InstrumentID" referenced-column-name="InstrumentID" />
+				</inverse-join-columns>
+			</join-table>
+		</many-to-many>
+		
+		<one-to-many target-entity="PracticeSession" field="practiceSessions" mapped-by="user" />
+		
+		<many-to-many target-entity="Role" field="roles">
+			<join-table name="Roles_Users">
+				<join-columns>
+					<join-column name="UserID" referenced-column-name="UserID" />
+				</join-columns>
+				<inverse-join-columns>
+					<join-column name="RoleID" referenced-column-name="RoleID" />
+				</inverse-join-columns>
+			</join-table>
+		</many-to-many>
+	</entity>
+	
+</doctrine-mapping>

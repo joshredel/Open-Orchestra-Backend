@@ -1,0 +1,27 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\PracticeRecording" table="PracticeRecordings">
+		<id name="id" type="integer" column="PracticeRecordingID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="startLocation" column="StartLocation" type="integer" />
+		<field name="stopLocation" column="StopLocation" type="integer" />
+		<field name="fileName" column="FileName" type="string" />
+		<field name="recordingDate" column="RecordingDate" type="datetime" />
+		<field name="duration" column="Duration" type="integer" />
+		<field name="isUploaded" column="IsUploaded" type="integer" />
+		
+		<many-to-one target-entity="PracticeSession" field="practiceSession" inversed-by="practiceRecordings">
+			<join-column name="PracticeSessionID" referenced-column-name="PracticeSessionID" />
+		</many-to-one>
+		
+		<one-to-many target-entity="TemporalComment" field="temporalComments" mapped-by="practiceRecording" />
+		
+		<one-to-many target-entity="Feedback" field="feedbacks" mapped-by="practiceRecording" />
+	</entity>
+	
+</doctrine-mapping>

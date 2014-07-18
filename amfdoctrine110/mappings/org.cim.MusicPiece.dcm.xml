@@ -1,0 +1,38 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\MusicPiece" table="MusicPieces">
+		<id name="id" type="integer" column="MusicPieceID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="pieceName" column="PieceName" type="string" />
+		<field name="composer" column="Composer" type="string" />
+		<field name="performingEnsemble" column="PerformingEnsemble" type="string" />
+		<field name="recordedDate" column="RecordedDate" type="datetime" />
+		<field name="conductorName" column="ConductorName" type="string" />
+		<field name="description" column="Description" type="text" />
+		<field name="thumbnailSet" column="ThumbnailSet" type="string" />
+		<field name="conductorsViewStream" column="ConductorsViewStream" type="string" />
+		
+		<one-to-one target-entity="User" field="conductorUser">
+			<join-column name="ConductorUserID" referenced-column-name="UserID" />
+		</one-to-one>
+		
+		<one-to-many target-entity="Score" field="scores" mapped-by="musicPiece" />
+		
+		<many-to-many target-entity="Genre" field="genres">
+			<join-table name="Genres_MusicPieces">
+				<join-columns>
+					<join-column name="MusicPieceID" referenced-column-name="MusicPieceID" />
+				</join-columns>
+				<inverse-join-columns>
+					<join-column name="GenreID" referenced-column-name="GenreID" />
+				</inverse-join-columns>
+			</join-table>
+		</many-to-many>
+	</entity>
+	
+</doctrine-mapping>

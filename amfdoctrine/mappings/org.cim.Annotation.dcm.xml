@@ -1,0 +1,18 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Annotation" table="Annotations">
+		<id name="id" type="integer" column="AnnotationID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="data" column="Data" type="blob" />
+		
+		<many-to-one target-entity="PracticeSession" field="practiceSesssion" inversed-by="annotations">
+			<join-column name="PracticeSessionID" referenced-column-name="PracticeSessionID" />
+		</many-to-one>
+	</entity>
+	
+</doctrine-mapping>

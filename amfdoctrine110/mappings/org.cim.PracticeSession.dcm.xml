@@ -1,0 +1,34 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\PracticeSession" table="PracticeSessions">
+		<id name="id" type="integer" column="PracticeSessionID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="createdDate" column="CreatedDate" type="datetime" />
+		<field name="lastAccessDate" column="LastAccessDate" type="datetime" />
+		<field name="lifecycle" column="Lifecycle" type="integer" />
+		
+		<many-to-one target-entity="User" field="user" inversed-by="practiceSessions">
+			<join-column name="UserID" referenced-column-name="UserID" />
+		</many-to-one>
+		
+		<one-to-one target-entity="MusicPiece" field="musicPiece">
+			<join-column name="MusicPieceID" referenced-column-name="MusicPieceID" />
+		</one-to-one>
+		
+		<one-to-one target-entity="Instrument" field="instrument">
+			<join-column name="InstrumentID" referenced-column-name="InstrumentID" />
+		</one-to-one>
+		
+		<one-to-many target-entity="Setting" field="settings" mapped-by="practiceSession" />
+		
+		<one-to-many target-entity="PracticeRecording" field="practiceRecordings" mapped-by="practiceSession" />
+		
+		<!--<one-to-many target-entity="Annotation" field="annotations" mapped-by="practiceSession" />-->
+	</entity>
+	
+</doctrine-mapping>

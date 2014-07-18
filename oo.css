@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family: Times, serif;
+	font-size: 14px;
+	color: #333333;
+	background-color: #F7F8F0;
+	padding: 0;
+	margin: 0;
+}
+
+#content {
+	padding-top: 35px;
+	margin: 0 auto;
+	width: 950px;
+}
+
+/* Menu */
+#menu {
+	float: right;
+}
+
+#menu li {
+	display: inline;
+	list-style-type: none;
+	font-style: italic;
+	padding-right: 24px;
+	padding-top: 0;
+}
+
+#menu li#active {
+	color: #888888;
+}
+
+#menu a {
+	color: #333333;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	text-decoration: underline;
+}
+
+/* Body */
+#description {
+	font-size: 24px;
+	background-image: url("images/logo.png");
+	background-repeat: no-repeat;
+	background-position: 60px 0px;
+	height: 230px;
+	padding-left: 310px;
+	padding-right: 180px;
+	padding-top: 10px;
+	margin-bottom: 55px;
+}
+
+#description p {
+	padding-top: 95px;
+}
+
+#smalllogo {
+	background-image: url("images/smalllogo.png");
+	background-repeat: no-repeat;
+	background-position: 60px 20px;
+	height: 110px;
+	margin-bottom: 35px;
+}
+
+.italics {
+	font-style: italic;
+}
+
+hr {
+	border-style: dashed;
+	border-width: 0.1em;
+	color: #CCCCCC;
+	margin: 25px;
+	clear: both;
+}
+
+p {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+h1 {
+	font-style: italic;
+	font-size: 24px;
+	margin-left: 40px;
+}
+
+h2 {
+	font-style: italic;
+	font-size: 18px;
+}
+
+a {
+	color: #E64135;
+}
+
+div.leftspacer {
+	width: 55px;
+	float: left;
+}
+
+div.instruction {
+	height: 94px;/*110px; height + pading-top should be 137*/
+	width: 240px;
+	float: left;
+	padding-left: 15px;
+/*	padding-right: 15px;*/
+	padding-top: 43px;/*20px;*/
+	background-color: #FFFFFF;
+	margin-right: 15px;
+	margin-bottom: 25px;
+}
+
+div.instruction.special {
+	width: 295px;
+}
+
+.number {
+	display: block;
+	float: left;
+	width: 40px;
+	height: 37px;
+	background-image: url("images/circle.png");
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	color: #FFFFFF;
+	font-size: 24px;
+	text-align: center;
+	padding-top: 9px;
+}
+
+.downarrow {
+	display: block;
+	float: left;
+	width: 30px;
+	height: 38px;
+	background-image: url("images/downarrow.png");
+	background-repeat: no-repeat;
+	background-position: 0 13px;
+}
+
+div.instruction p {
+	float: left;
+	font-size: 21px;
+	margin: 0;
+	margin-left: 15px;
+	width: 170px;
+}
+
+div.instruction.special p {
+	width: 225px;
+}
+
+div.instruction span.version {
+	font-size: 14px;
+	line-height: 50px;
+}
+
+a.instruction {
+	text-decoration: none;
+	color: #333333;
+}
+
+a.instruction:hover p {
+	text-decoration: underline;
+}
+
+.faqs li {
+	color: #E64135;
+	margin-left: 15px;
+	margin-bottom: 30px;
+	font-size: 16px;
+}
+
+.faqs p {
+	color: #333333;
+	margin: 0;
+	line-height: 30px;
+}
+
+/* Footer */
+#footercontainer {
+	margin-top: 100px;
+	width: 100%;
+	background-color: #333333;
+	padding: 0;
+}
+
+#footer {
+	margin-top: 100px;
+	color: #F7F8F0;
+	padding: 20px 45px;
+	margin: 0 auto;
+	width: 870px;
+}
+
+#footer span {
+	font-style: normal;
+}
+
+#footer hr {
+	color: #F7F8F0;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+#footer p {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#footer a {
+	font-style: italic;
+}

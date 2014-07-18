@@ -1,0 +1,15 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Role" table="Roles">
+		<id name="id" type="integer" column="RoleID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="roleName" column="RoleName" type="string" />
+		<field name="permissions" column="Permissions" type="text" />
+	</entity>
+	
+</doctrine-mapping>

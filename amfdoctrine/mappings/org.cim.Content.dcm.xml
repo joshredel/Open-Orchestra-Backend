@@ -1,0 +1,20 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Content" table="Contents">
+		<id name="id" type="integer" column="ContentID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="instrumentName" column="InstrumentName" type="string" />
+		<field name="body" column="Body" type="text" />
+		<field name="writing" column="Writing" type="blob" />
+		<field name="audio" column="Audio" type="blob" />
+		<field name="video" column="Video" type="blob" />
+		<field name="image" column="Image" type="blob" />
+		<field name="creationDate" column="CreationDate" type="datetime" />
+	</entity>
+	
+</doctrine-mapping>

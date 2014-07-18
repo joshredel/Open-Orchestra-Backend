@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Open Orchestra :: Home</title>
+    <link href="oo.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="swfobject.js"></script>
+    <script type="text/javascript">
+    
+    	function errorAlert(){
+    		alert("errorCalled");	
+    	}
+    	
+    	var flashvars = {};
+    	flashvars.appname = "Open Orchestra";
+    	flashvars.appurl = "http://www.openorchestra.ca/application/OpenOrchestra.air";
+    	flashvars.airversion = "2.5";
+    	flashvars.imgURL = "images/step3.png";
+    	flashvars.textColor = "333333";
+    	flashvars.bkgURL = "images/step3done.png";
+    	flashvars.overURL = "images/step3over.png";
+    	flashvars.onErrorURL = "AIRInstall.html";
+    	
+    	var params = {};
+    	params.menu = "false";
+    	params.quality = "high";
+    	params.scale = "noScale"; //leave it
+    	params.salign = "TL"; // leave it
+    	params.wmode = "window";
+    	params.bgcolor = "#ffffff";
+    	params.allowfullscreen = "false";
+    	params.allowscriptaccess = "sameDomain";
+    	var attributes = {};
+    	attributes.id = "HDBadge";
+    	attributes.name = "HDBadge";
+    	attributes.align = "middle";
+    	
+    	swfobject.embedSWF("HDBadge.swf", "installbadge", "310", "137", "9,0,0", "expressInstall.swf", flashvars, params, attributes);
+    </script>
+</head>
+
+<body>
+	<div id="content">
+		<!-- Menu -->
+		<ul id="menu">
+	    	<li id="active">Home</li>
+	        <li><a href="faq.html">Guides &amp; FAQ</a></li>
+	        <li><a href="http://openorchestra.cim.mcgill.ca">Blog</a></li>
+	        <li><a href="survey.php">Questionnaire</a></li>
+	    </ul>
+	    
+	    <div id="description">
+		    <p>
+		    <span class="italics">Open Orchestra</span> serves as the musical equivalent of an aircraft simulator, providing the 
+		    musician the experience of playing with an orchestra.
+		    </p>
+		</div>
+		
+		<hr />
+		
+	    <h1>Software installation steps:</h1>
+	    
+	    <div class="leftspacer">&nbsp;</div>
+	    
+	    <a class="instruction" href="application/267.05-Quadro-win7-winvista-64bit-english-whql.exe" target="_blank">
+	    <div class="instruction">
+		    <span class="number">1</span>
+		    <p>
+		    	Download &amp; install graphics drivers.
+		    </p>
+	    </div>
+	    </a>
+	    
+	    <a class="instruction" href="http://www.lexiconpro.com/product_downloads/154/software_and_drivers/Lexicon_IONIX_U22_X64_2.9.13.zip" target="_blank">
+	    <div class="instruction">
+	        <span class="number">2</span>
+	        <p>
+	        	Download &amp; install audio drivers.
+	        </p>
+	    </div>
+	    </a>
+	    
+	    <div id="installbadge" class="instruction special">
+	        <a class="instruction" href="application/OpenOrchestra.air" target="_blank">
+            <span class="number">3</span>
+	        <p>
+	        	Install the Open Orchestra Application and enjoy.
+                <span class="version">Version: March 2, 2011</span>
+	        	<!--Thank you for installing Open Orchestra!-->
+	        </p>
+            </a>
+	    </div>
+	    
+	    <hr />
+	    
+	    <p>
+	    NOTE: <span class="italics">The software for Open Orchestra at the moment is restricted to our partners. 
+	    If you are interested to try it or forgot your password, please let us know at: <a href="mailto:oo@cim.mcgill.ca">oo@cim.mcgill.ca</a></span>
+	    </p>
+    </div>
+    
+    <!-- Footer Area -->
+    <div id="footercontainer">
+	    <div id="footer">
+	        <h2>Who is <span>Open Orchestra?</span></h2>
+	        <p>
+	        <a href="http://www.mcgill.ca" target="_blank">McGill University</a>, Centre for Interdisciplinary Research in Music, Media and Technology - <a href="http://www.cirmmt.mcgill.ca" target="_blank">CIRMMT</a> -, and the <a href="http://cim.mcgill.ca/sre" target="_blank">Shared Reality Lab</a>. University of British Columbia, UBC Telestudios, National Youth Orchestra of Canada, Banff Centre, National Arts Centre Orchestra, Humber College.
+	        </p>
+	        
+	        <hr />
+	        
+	        <p>
+	        Project funded by <a href="http://www.canarie.ca" target="_blank">CANARIE</a>, Canada's Advanced Network and Innovation Network, under the Network Enabled Platforms (NEP-2) program.
+	        </p>
+	    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Mixer" table="Mixers">
+		<id name="id" type="integer" column="MixerID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="sectionName" column="SectionName" type="string" />
+		<field name="channelName" column="ChannelName" type="string" />
+		<field name="isReferenceInstrument" column="IsReferenceInstrument" type="integer" />
+		<field name="ordering" column="Ordering" type="integer" />
+		
+		<many-to-one target-entity="Score" field="score" inversed-by="mixers">
+			<join-column name="ScoreID" referenced-column-name="ScoreID" />
+		</many-to-one>
+	</entity>
+	
+</doctrine-mapping>

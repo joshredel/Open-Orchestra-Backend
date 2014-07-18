@@ -1,0 +1,21 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Setting" table="Settings">
+		<id name="id" type="integer" column="SettingID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="settingName" column="SettingName" type="string" />
+		<field name="startingPoint" column="StartingPoint" type="integer" />
+		<field name="endingPoint" column="endingPoint" type="integer" />
+		<field name="mixerData" column="MixerData" type="text" />
+		
+		<many-to-one target-entity="PracticeSession" field="practiceSession" inversed-by="settings">
+			<join-column name="PracticeSessionID" referenced-column-name="PracticeSessionID" />
+		</many-to-one>
+	</entity>
+	
+</doctrine-mapping>

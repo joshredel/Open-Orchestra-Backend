@@ -1,0 +1,32 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Score" table="Scores">
+		<id name="id" type="integer" column="ScoreID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="fileLocation" column="FileLocation" type="string" />
+		<field name="xmlLocation" column="XMLLocation" type="string" />
+		<field name="masterServerLocation" column="MasterServerLocation" type="string" />
+		<field name="conversionServerLocation" column="ConversionServerLocation" type="string" />
+		<field name="stream" column="Stream" type="string" />
+		
+		<many-to-one target-entity="MusicPiece" field="musicPiece" inversed-by="scores">
+			<join-column name="MusicPieceID" referenced-column-name="MusicPieceID" />
+		</many-to-one>
+		
+		<one-to-one target-entity="Instrument" field="instrument">
+			<join-column name="InstrumentID" referenced-column-name="InstrumentID" />
+		</one-to-one>
+		
+		<one-to-one target-entity="Setting" field="defaultSetting">
+			<join-column name="DefaultSettingID" referenced-column-name="SettingID" />
+		</one-to-one>
+		
+		<one-to-many target-entity="Mixer" field="mixers" mapped-by="score" />
+	</entity>
+	
+</doctrine-mapping>

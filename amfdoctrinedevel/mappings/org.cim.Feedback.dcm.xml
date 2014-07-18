@@ -1,0 +1,30 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+						http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	
+	<entity name="org\cim\Feedback" table="Feedbacks">
+		<id name="id" type="integer" column="FeedbackID">
+			<generator strategy="AUTO" />
+		</id>
+		
+		<field name="hasBeenRead" column="HasBeenRead" type="integer" />
+		<field name="sentDate" column="SentDate" type="datetime" />
+		<field name="openDate" column="OpenDate" type="datetime" />
+		<field name="deletedAuthorFullName" column="DeletedAuthorFullName" type="string" />
+		<field name="kind" column="Kind" type="string" />
+		
+		<many-to-one target-entity="PracticeRecording" field="practiceRecording" inversed-by="feedbacks">
+			<join-column name="PracticeRecordingID" referenced-column-name="PracticeRecordingID" />
+		</many-to-one>
+		
+		<one-to-one target-entity="User" field="authorUser">
+			<join-column name="AuthorUserID" referenced-column-name="UserID" />
+		</one-to-one>
+		
+		<one-to-one target-entity="Content" field="content">
+			<join-column name="ContentID" referenced-column-name="ContentID" />
+		</one-to-one>
+	</entity>
+	
+</doctrine-mapping>

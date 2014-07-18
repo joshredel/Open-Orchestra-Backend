@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>HDBadge</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<script type="text/javascript" src="swfobject.js"></script>
+		<script type="text/javascript">
+		
+			var flashvars = {};
+			flashvars.appname = "Name of application"; //required
+			flashvars.appurl = "URL to AIR application"; //required
+			flashvars.airversion = "AIR version numner (1.5 or 2.0)"; //required
+			
+			flashvars.textColor = "ffffff"; // color of text in console
+			//flashvars.imgURL = "url to background image" // if undefined uses default background
+			//flashvars.logoURL = "url to logo";// only works with default background
+			
+			var params = {};
+			params.menu = "false";
+			params.quality = "high";
+			params.scale = "noScale";
+			params.salign = "TL";
+			params.wmode = "window";
+			params.bgcolor = "#ffffff";
+			params.allowfullscreen = "false";
+			params.allowscriptaccess = "sameDomain";
+			var attributes = {};
+			attributes.id = "AIRInstall";
+			attributes.name = "AIRInstall";
+			attributes.align = "middle";
+			
+			swfobject.embedSWF("AIRInstall.swf", "AIRInstallDiv", "320", "240", "9,0,0", "expressInstall.swf", flashvars, params, attributes);
+		</script>
+	</head>
+	<body bgcolor="#545454">
+		<center>
+		<div id="AIRInstallDiv">
+			<a href="http://www.adobe.com/go/getflashplayer">
+				<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+			</a>
+		</div>
+		</center>
+	</body>
+</html>
